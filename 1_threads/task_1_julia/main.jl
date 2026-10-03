@@ -34,7 +34,7 @@ function main()
     # Шаг 4. Делим диапазон на столько же частей, сколько потоков.
     # Размер части считаем нацело, а остаток отдаём последней части,
     # иначе при неудобном числе потоков конец диапазона потеряется.
-    part_size = MAX_NUMBER ÷ thread_count
+    part_size = div(MAX_NUMBER, thread_count)
     part_sums = zeros(Int128, thread_count)
     println("Range: 1..", MAX_NUMBER, ", parts: ", thread_count, ", each has ",
             part_size, " numbers, the last part takes the rest")
