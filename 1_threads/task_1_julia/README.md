@@ -42,6 +42,32 @@ Check passed: true
 того, какой поток проснётся первым. Сами суммы, итог и вердикт `Check passed: true`
 всегда одинаковые, меняется только время работы.
 
+## Тесты
+
+Файл `test_main.jl` подгружает `main.jl` и проверяет внутренние функции: сумму квадратов
+на маленьких участках, пустой участок, совпадение суммы частей с полной суммой и
+совпадение с формулой.
+
+```
+julia test_main.jl
+```
+
+```
+=== Tests for task 1.1 ===
+OK   sum_of_squares 1..3: 14
+OK   sum_of_squares 4..4: 16
+OK   sum_of_squares 1..1: 1
+OK   sum_of_squares 5..4: 0
+OK   four parts equal whole: 338350
+OK   expected_sum 100: 338350
+OK   expected_sum 1: 1
+OK   big sum fits Int128: true
+OK   big sum equals formula: 333333383333335000000
+All tests passed
+```
+
+Тест возвращает код 0, если все проверки прошли, и 1, если есть провалы.
+
 ## Разбор решения
 
 1. **Тип `Int128`.** Сумма квадратов до 10 000 000 - это примерно `3.3 * 10^20`, в `Int64`

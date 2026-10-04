@@ -61,4 +61,8 @@ function main()
     println("Check passed: ", total_sum == formula_sum)
 end
 
-main()
+# Шаг 8. Внизу программа вызывает main() только когда файл открыли как программу.
+# Когда файл подгружает тест, main() не вызывается.
+if abspath(PROGRAM_FILE) == @__FILE__
+    main()
+end
