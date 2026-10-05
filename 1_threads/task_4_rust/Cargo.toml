@@ -1,0 +1,10 @@
+[package]
+name = "task_1_4"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[[bin]]
+name = "task_1_4"
+path = "main.rs"

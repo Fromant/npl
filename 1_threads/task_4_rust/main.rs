@@ -1,6 +1,7 @@
 // Задача 1.4. Тема "Многопоточность".
 // Четыре потока параллельно пишут каждый свой файл.
-// Язык: Rust 1.98.1. Запуск: rustc main.rs -O -o main.exe, затем main.exe
+// Язык: Rust 1.98.1. 
+// cargo run
 
 use std::fs::File;
 use std::io::Write;
@@ -59,7 +60,7 @@ fn main() {
     println!("Check passed: {}", total_lines == THREAD_COUNT * LINES_PER_FILE);
 }
 
-// Тесты к задаче 1.4. Запуск: rustc --test main.rs
+// cargo test
 #[cfg(test)]
 mod tests {
     use super::*;
